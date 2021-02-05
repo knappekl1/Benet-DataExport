@@ -3,6 +3,7 @@
   "description": "Exports processed and confirmed data from Rossum AI",
   "main": "Main.xaml",
   "dependencies": {
+    "UiPath.Database.Activities": "[1.4.0]",
     "UiPath.Excel.Activities": "[2.9.2-preview]",
     "UiPath.Mail.Activities": "[1.9.2-preview]",
     "UiPath.System.Activities": "[20.8.0-preview]",

@@ -15,5 +15,6 @@
 	<OCRB_Account desc="bankovni ucet">BankAccountNo</OCRB_Account>
 	<OPCH_VatSum desc="dan (DPH) celkem">VATax</OPCH_VatSum>
 	<OPCH_BaseTotal desc="doklad bez DPH - dopocitana hodnota">BaseValue</OPCH_BaseTotal>
+  <ID_Import_SAP desc="SAP Import ID">SAP_ID</ID_Import_SAP>
 </Doklad>
 
