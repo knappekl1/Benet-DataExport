@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2154,13598</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2154,1187.33333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -90,7 +90,7 @@
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Entire Process" sap:VirtualizedContainerService.HintSize="1944.66666666667,13533.3333333333" sap2010:WorkflowViewState.IdRef="Sequence_22">
+  <Sequence DisplayName="Entire Process" sap:VirtualizedContainerService.HintSize="606.666666666667,827.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_22">
     <Sequence.Variables>
       <Variable x:TypeArguments="njl:JObject" Name="ConfigObj" />
       <Variable x:TypeArguments="x:String" Name="TempFilePath" />
@@ -103,9 +103,9 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1902.66666666667,13441.3333333333" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="564.666666666667,735.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_2">
       <TryCatch.Try>
-        <Sequence sap2010:Annotation.AnnotationText="This workflow logs to ELIS and exports all validated documents data to Output Folder" DisplayName="02_Export" sap:VirtualizedContainerService.HintSize="1864,13203.3333333333" sap2010:WorkflowViewState.IdRef="Sequence_11">
+        <Sequence sap2010:Annotation.AnnotationText="This workflow logs to ELIS and exports all validated documents data to Output Folder" DisplayName="02_Export" sap:VirtualizedContainerService.HintSize="1864,12474" sap2010:WorkflowViewState.IdRef="Sequence_11">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Default="https://api.elis.rossum.ai/v1" Name="Endpoint" />
             <Variable x:TypeArguments="x:String" Name="loginID" />
@@ -216,7 +216,7 @@
               </Assign.Value>
             </Assign>
           </Sequence>
-          <Sequence DisplayName="Export" sap:VirtualizedContainerService.HintSize="1822,10774" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <Sequence DisplayName="Export" sap:VirtualizedContainerService.HintSize="1822,10044.6666666667" sap2010:WorkflowViewState.IdRef="Sequence_9">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="authKey" />
               <Variable x:TypeArguments="x:String" Name="ResultJSON" />
@@ -349,13 +349,13 @@
                 <InArgument x:TypeArguments="x:String">[Endpoint + "/queues/" + QueueID]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="[Index]" DisplayName="For Each Annotation ID" sap:VirtualizedContainerService.HintSize="1780,8911.33333333333" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[objJSON(&quot;results&quot;)]">
+            <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="[Index]" DisplayName="For Each Annotation ID" sap:VirtualizedContainerService.HintSize="1780,8182" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[objJSON(&quot;results&quot;)]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="njl:JObject">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="njl:JObject" Name="URL" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Export and mark Deleted" sap:VirtualizedContainerService.HintSize="1743.33333333333,8772.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <Sequence DisplayName="Export and mark Deleted" sap:VirtualizedContainerService.HintSize="1743.33333333333,8043.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_8">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="AnnotationID" />
                       <Variable x:TypeArguments="x:String" Name="MatchedFile" />
@@ -966,7 +966,7 @@
                         </ui:CommentOut>
                         <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1617.33333333333,52.6666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_7">
                           <ui:CommentOut.Body>
-                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="739.333333333333,1526.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="739.333333333333,1569.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_48">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1239,7 +1239,7 @@ XMLOutput)]</InArgument>
                         </ui:HttpClient>
                       </If.Else>
                     </If>
-                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1701.33333333333,1062.66666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1701.33333333333,333.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                       <TryCatch.Try>
                         <Sequence DisplayName="Match file by Annotation and move it to Processed" sap:VirtualizedContainerService.HintSize="890,940.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_7">
                           <Sequence.Variables>
@@ -1283,7 +1283,7 @@ XMLOutput)]</InArgument>
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Robot se pokusil uložit dokument: &quot; + OutDict(&quot;DocID&quot;) +&quot;, který již v cílovém úložišti existuje! Zkontrolujte dokument v pracovní složce&quot; + FolderLocationObj.Item(&quot;ProcessingSaveFolder&quot;).ToString + &quot;a porovnejte s dokumentem v cílové složce S:\SAP\PDF-Out&quot;]" DisplayName="Send SMTP Mail Message" Email="[ConfigObj.Item(&quot;EmailSender&quot;).ToString]" EnableSSL="True" From="[ConfigObj.Item(&quot;EmailSender&quot;).ToString]" sap:VirtualizedContainerService.HintSize="334,149.333333333333" sap2010:WorkflowViewState.IdRef="SendMail_3" IsBodyHtml="False" Password="[ConfigObj.Item(&quot;PasswordSender&quot;).ToString]" Port="587" SecureConnection="Auto" Server="[ConfigObj.Item(&quot;SmtpServer&quot;).ToString]" Subject="[&quot;Upozornění Robot / &quot; +OutDict(&quot;DocType&quot;) + &quot;/&quot; + OutDict(&quot;DocID&quot;) + &quot;/ duplicitní název dokumentu&quot;]" To="[ConfigObj.Item(&quot;EmailTechNotification&quot;).ToString]">
+                                <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Robot se pokusil uložit dokument: &quot; + OutDict(&quot;DocID&quot;) +&quot;, který již v cílovém úložišti existuje! Zkontrolujte dokument v pracovní složce&quot; + FolderLocationObj.Item(&quot;ProcessingSaveFolder&quot;).ToString + &quot;a porovnejte s dokumentem v cílové složce S:\SAP\PDF-Out&quot;]" DisplayName="Send SMTP Mail Message" Email="[ConfigObj.Item(&quot;EmailSender&quot;).ToString]" EnableSSL="True" From="[ConfigObj.Item(&quot;EmailSender&quot;).ToString]" sap:VirtualizedContainerService.HintSize="334,149.333333333333" sap2010:WorkflowViewState.IdRef="SendMail_3" IsBodyHtml="False" Password="[ConfigObj.Item(&quot;PasswordSender&quot;).ToString]" Port="465" SecureConnection="Auto" Server="[ConfigObj.Item(&quot;SmtpServer&quot;).ToString]" Subject="[&quot;Upozornění Robot / &quot; +OutDict(&quot;DocType&quot;) + &quot;/&quot; + OutDict(&quot;DocID&quot;) + &quot;/ duplicitní název dokumentu&quot;]" To="[ConfigObj.Item(&quot;EmailTechNotification&quot;).ToString]">
                                   <ui:SendMail.Files>
                                     <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                   </ui:SendMail.Files>
@@ -1306,10 +1306,10 @@ XMLOutput)]</InArgument>
                         </Sequence>
                       </TryCatch.Try>
                       <TryCatch.Catches>
-                        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="482,890.666666666667" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="441.333333333333,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
@@ -1317,15 +1317,15 @@ XMLOutput)]</InArgument>
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="Retry" sap:VirtualizedContainerService.HintSize="476,820" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                            <Sequence DisplayName="Retry" sap:VirtualizedContainerService.HintSize="970.666666666667,1467.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_52">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;File matching document in ELIS not found in Processing folder, retrying...&quot;]" />
-                              <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
-                              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,531.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_6">
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="928.666666666667,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;File matching document in ELIS not found in Processing folder, retrying...&quot;]" />
+                              <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="928.666666666667,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="928.666666666667,1178.66666666667" sap2010:WorkflowViewState.IdRef="TryCatch_6">
                                 <TryCatch.Try>
                                   <Sequence DisplayName="Match file by Annotation and move it to Processed" sap:VirtualizedContainerService.HintSize="890,940.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_59">
                                     <Sequence.Variables>
@@ -1369,7 +1369,7 @@ XMLOutput)]</InArgument>
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Robot se pokusil uložit dokument: &quot; + OutDict(&quot;DocID&quot;) +&quot;, který již v cílovém úložišti existuje! Zkontrolujte dokument v pracovní složce&quot; + FolderLocationObj.Item(&quot;ProcessingSaveFolder&quot;).ToString + &quot;a porovnejte s dokumentem v cílové složce S:\SAP\PDF-Out&quot;]" DisplayName="Send SMTP Mail Message" Email="[ConfigObj.Item(&quot;EmailSender&quot;).ToString]" EnableSSL="True" From="[ConfigObj.Item(&quot;EmailSender&quot;).ToString]" sap:VirtualizedContainerService.HintSize="334,149.333333333333" sap2010:WorkflowViewState.IdRef="SendMail_4" IsBodyHtml="False" Password="[ConfigObj.Item(&quot;PasswordSender&quot;).ToString]" Port="587" SecureConnection="Auto" Server="[ConfigObj.Item(&quot;SmtpServer&quot;).ToString]" Subject="[&quot;Upozornění Robot / &quot; +OutDict(&quot;DocType&quot;) + &quot;/&quot; + OutDict(&quot;DocID&quot;) + &quot;/ duplicitní název dokumentu&quot;]" To="[ConfigObj.Item(&quot;EmailTechNotification&quot;).ToString]">
+                                          <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Robot se pokusil uložit dokument: &quot; + OutDict(&quot;DocID&quot;) +&quot;, který již v cílovém úložišti existuje! Zkontrolujte dokument v pracovní složce&quot; + FolderLocationObj.Item(&quot;ProcessingSaveFolder&quot;).ToString + &quot;a porovnejte s dokumentem v cílové složce S:\SAP\PDF-Out&quot;]" DisplayName="Send SMTP Mail Message" Email="[ConfigObj.Item(&quot;EmailSender&quot;).ToString]" EnableSSL="True" From="[ConfigObj.Item(&quot;EmailSender&quot;).ToString]" sap:VirtualizedContainerService.HintSize="334,149.333333333333" sap2010:WorkflowViewState.IdRef="SendMail_4" IsBodyHtml="False" Password="[ConfigObj.Item(&quot;PasswordSender&quot;).ToString]" Port="465" SecureConnection="Auto" Server="[ConfigObj.Item(&quot;SmtpServer&quot;).ToString]" Subject="[&quot;Upozornění Robot / &quot; +OutDict(&quot;DocType&quot;) + &quot;/&quot; + OutDict(&quot;DocID&quot;) + &quot;/ duplicitní název dokumentu&quot;]" To="[ConfigObj.Item(&quot;EmailTechNotification&quot;).ToString]">
                                             <ui:SendMail.Files>
                                               <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                             </ui:SendMail.Files>
@@ -1392,10 +1392,10 @@ XMLOutput)]</InArgument>
                                   </Sequence>
                                 </TryCatch.Try>
                                 <TryCatch.Catches>
-                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,359.333333333333" sap2010:WorkflowViewState.IdRef="Catch`1_6">
+                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="894.666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_6">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
@@ -1403,7 +1403,7 @@ XMLOutput)]</InArgument>
                                       <ActivityAction.Argument>
                                         <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                       </ActivityAction.Argument>
-                                      <Sequence DisplayName="Log and add to mail message body" sap:VirtualizedContainerService.HintSize="376,288.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                                      <Sequence DisplayName="Log and add to mail message body" sap:VirtualizedContainerService.HintSize="376,286" sap2010:WorkflowViewState.IdRef="Sequence_54">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1469,7 +1469,7 @@ XMLOutput)]</InArgument>
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1868.66666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="530.666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1513,7 +1513,7 @@ XMLOutput)]</InArgument>
           </Assign>
           <If Condition="[Not messageBody.equals(string.empty)]" DisplayName="If any message in message body" sap:VirtualizedContainerService.HintSize="484,303.333333333333" sap2010:WorkflowViewState.IdRef="If_17">
             <If.Then>
-              <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Please process manually the following files: &quot; &amp; vbcr &amp; MessageBody &amp; vbcrlf &amp; &quot;This is an automated message.&quot;]" DisplayName="Send SMTP Mail Message" Email="[ConfigObj.Item(&quot;EmailSender&quot;).ToString]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="334,149.333333333333" sap2010:WorkflowViewState.IdRef="SendMail_2" IsBodyHtml="False" Password="[ConfigObj.Item(&quot;PasswordSender&quot;).ToString]" Port="587" SecureConnection="Auto" Server="[ConfigObj.Item(&quot;SmtpServer&quot;).ToString]" Subject="Rossum Export Issue: ACTION REQUIRED" To="[ConfigObj.Item(&quot;EmailNotification&quot;).ToString]">
+              <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Please process manually the following files: &quot; &amp; vbcr &amp; MessageBody &amp; vbcrlf &amp; &quot;This is an automated message.&quot;]" DisplayName="Send SMTP Mail Message" Email="[ConfigObj.Item(&quot;EmailSender&quot;).ToString]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="334,149.333333333333" sap2010:WorkflowViewState.IdRef="SendMail_2" IsBodyHtml="False" Password="[ConfigObj.Item(&quot;PasswordSender&quot;).ToString]" Port="465" SecureConnection="Auto" Server="[ConfigObj.Item(&quot;SmtpServer&quot;).ToString]" Subject="Rossum Export Issue: ACTION REQUIRED" To="[ConfigObj.Item(&quot;EmailNotification&quot;).ToString]">
                 <ui:SendMail.Files>
                   <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                 </ui:SendMail.Files>
