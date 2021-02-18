@@ -5,6 +5,8 @@
 "EmailNotification": "uctarna@benet-auto.cz",
 "EmailSender":"no.reply@benet-auto.cz",
 "PasswordSender":"b6bbb1It3",
+"SmtpServer":"mail.benet-auto.cz",
+"EmailTechNotification": "it@benet-auto.cz",
 "OutputTableMap":"Data\\OutputTableRows.xlsx",
 "XMLstructure":"Data\\struktura.xml"
 }
