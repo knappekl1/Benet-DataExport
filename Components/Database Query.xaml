@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2154,1414</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2124,1401.33333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Database_Query_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="28">
@@ -42,7 +42,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="18">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="36">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -61,9 +61,10 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Database</AssemblyReference>
       <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Database Insert" sap:VirtualizedContainerService.HintSize="644.666666666667,1349.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+  <Sequence DisplayName="Database Insert" sap:VirtualizedContainerService.HintSize="873.333333333333,1336.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="Index" />
       <Variable x:TypeArguments="x:Boolean" Name="Flag" />
@@ -74,7 +75,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign DisplayName="Assign Index" sap:VirtualizedContainerService.HintSize="602.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign DisplayName="Assign Index" sap:VirtualizedContainerService.HintSize="831.333333333333,62" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[Index]</OutArgument>
       </Assign.To>
@@ -82,11 +83,11 @@
         <InArgument x:TypeArguments="x:Int32">0</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="602.666666666667,1053.33333333333" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+    <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="831.333333333333,1040.66666666667" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
       <ui:InterruptibleDoWhile.Body>
-        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="566,884" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="794.666666666667,871.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_1">
           <TryCatch.Try>
-            <Sequence sap2010:Annotation.AnnotationText="Opens connection to given database and performs query or nonQuery operation with give query string. Closes the connection at exit." DisplayName="Database Query" sap:VirtualizedContainerService.HintSize="756,758" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <Sequence sap2010:Annotation.AnnotationText="Opens connection to given database and performs query or nonQuery operation with give query string. Closes the connection at exit." DisplayName="Database Query" sap:VirtualizedContainerService.HintSize="756,633.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:Int32" Name="Result" />
               </Sequence.Variables>
@@ -97,7 +98,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:DatabaseConnect DatabaseConnection="[Connection]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="714,58.6666666666667" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.Odbc" ConnectionString="Dsn=ROBOT;uid=robot;pwd=b0T[B3n]T" />
-              <If Condition="[in_Type.toLower.Equals(&quot;query&quot;)]" DisplayName="Select action by query type" sap:VirtualizedContainerService.HintSize="714,238" sap2010:WorkflowViewState.IdRef="If_1">
+              <If Condition="[in_Type.toLower.Equals(&quot;query&quot;)]" DisplayName="Select action by query type" sap:VirtualizedContainerService.HintSize="714,248" sap2010:WorkflowViewState.IdRef="If_1">
                 <If.Then>
                   <ui:ExecuteQuery ContinueOnError="{x:Null}" DataTable="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Query" ExistingDbConnection="[Connection]" sap:VirtualizedContainerService.HintSize="334,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="[in_Query]">
                     <ui:ExecuteQuery.Parameters>
@@ -122,14 +123,13 @@
                   <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="714,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Database Insert sucessfull&quot;]" />
             </Sequence>
           </TryCatch.Try>
           <TryCatch.Catches>
-            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="532,712" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="760.666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -137,13 +137,13 @@
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Exception sequence" sap:VirtualizedContainerService.HintSize="526,641.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Exception sequence" sap:VirtualizedContainerService.HintSize="526,669.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <If Condition="[Connection isnot nothing]" sap:VirtualizedContainerService.HintSize="484,210.666666666667" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If Condition="[Connection isnot nothing]" sap:VirtualizedContainerService.HintSize="484,241.333333333333" sap2010:WorkflowViewState.IdRef="If_2">
                     <If.Then>
                       <ui:DatabaseDisconnect DatabaseConnection="[Connection]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_2" />
                     </If.Then>
@@ -175,7 +175,7 @@
         <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Flag And index &lt; 3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
       </ui:InterruptibleDoWhile.Condition>
     </ui:InterruptibleDoWhile>
-    <Assign DisplayName="Assign Flag as outArg" sap:VirtualizedContainerService.HintSize="602.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_5">
+    <Assign DisplayName="Assign Flag as outArg" sap:VirtualizedContainerService.HintSize="831.333333333333,62" sap2010:WorkflowViewState.IdRef="Assign_5">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Boolean">[out_Flag]</OutArgument>
       </Assign.To>

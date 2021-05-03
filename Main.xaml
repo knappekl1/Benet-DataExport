@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2250,18578.6666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2250,19988.6666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="45">
@@ -58,7 +58,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="33">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -94,7 +94,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Entire Process" sap:VirtualizedContainerService.HintSize="2260,18514" sap2010:WorkflowViewState.IdRef="Sequence_22">
+  <Sequence DisplayName="Entire Process" sap:VirtualizedContainerService.HintSize="2260,19924" sap2010:WorkflowViewState.IdRef="Sequence_22">
     <Sequence.Variables>
       <Variable x:TypeArguments="njl:JObject" Name="ConfigObj" />
       <Variable x:TypeArguments="x:String" Name="TempFilePath" />
@@ -111,11 +111,12 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="2218,18422" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="2218,19832" sap2010:WorkflowViewState.IdRef="TryCatch_2">
       <TryCatch.Try>
-        <Sequence sap2010:Annotation.AnnotationText="This workflow logs to ELIS and exports all validated documents data to Output Folder" DisplayName="02_Export" sap:VirtualizedContainerService.HintSize="2179.33333333333,18184" sap2010:WorkflowViewState.IdRef="Sequence_11">
+        <Sequence sap2010:Annotation.AnnotationText="This workflow logs to ELIS and exports all validated documents data to Output Folder" DisplayName="02_Export" sap:VirtualizedContainerService.HintSize="2179.33333333333,19594" sap2010:WorkflowViewState.IdRef="Sequence_11">
           <Sequence.Variables>
             <Variable x:TypeArguments="njl:JObject" Name="FolderLocationObj" />
+            <Variable x:TypeArguments="sd:DataTable" Name="LogTable" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -222,7 +223,7 @@
               </Assign.Value>
             </Assign>
           </Sequence>
-          <Sequence DisplayName="Export" sap:VirtualizedContainerService.HintSize="2137.33333333333,15092.6666666667" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <Sequence DisplayName="Export" sap:VirtualizedContainerService.HintSize="2137.33333333333,16502.6666666667" sap2010:WorkflowViewState.IdRef="Sequence_9">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="authKey" />
               <Variable x:TypeArguments="x:String" Name="ResultJSON" />
@@ -355,13 +356,13 @@
                 <InArgument x:TypeArguments="x:String">[Endpoint + "/queues/" + QueueID]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="[Index]" DisplayName="For Each Annotation ID" sap:VirtualizedContainerService.HintSize="2095.33333333333,13199.3333333333" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[objJSON(&quot;results&quot;)]">
+            <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="[Index]" DisplayName="For Each Annotation ID" sap:VirtualizedContainerService.HintSize="2095.33333333333,14609.3333333333" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[objJSON(&quot;results&quot;)]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="njl:JObject">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="njl:JObject" Name="URL" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Export and mark Deleted" sap:VirtualizedContainerService.HintSize="2058.66666666667,13060.6666666667" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <Sequence DisplayName="Export and mark Deleted" sap:VirtualizedContainerService.HintSize="2058.66666666667,14470.6666666667" sap2010:WorkflowViewState.IdRef="Sequence_8">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="AnnotationID" />
                       <Variable x:TypeArguments="x:String" Name="MatchedFile" />
@@ -423,7 +424,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:HttpClient>
-                    <Sequence DisplayName="Write data to CSV" sap:VirtualizedContainerService.HintSize="2016.66666666667,9557.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <Sequence DisplayName="Write data to CSV" sap:VirtualizedContainerService.HintSize="2016.66666666667,10123.3333333333" sap2010:WorkflowViewState.IdRef="Sequence_6">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="ui:WorkbookApplication" Name="soubor_xlsx" />
                         <Variable x:TypeArguments="sd:DataTable" Name="DTcsvInvoices" />
@@ -519,7 +520,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:Delete>
-                      <Sequence DisplayName="Rearrange DataTable to BENET Format" sap:VirtualizedContainerService.HintSize="1974.66666666667,7791.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                      <Sequence DisplayName="Rearrange DataTable to BENET Format" sap:VirtualizedContainerService.HintSize="1974.66666666667,8357.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_24">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="s:String[]" Name="ColumnsToRemove" />
                           <Variable x:TypeArguments="x:String" Name="BankCode" />
@@ -543,13 +544,13 @@
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:ReadRange>
                         <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Value" DataTable="[MappingTable]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="1932.66666666667,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
-                        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[MappingTable]" DisplayName="For Each Row in Mapping Table" sap:VirtualizedContainerService.HintSize="1932.66666666667,6319.33333333333" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[MappingTable]" DisplayName="For Each Row in Mapping Table" sap:VirtualizedContainerService.HintSize="1932.66666666667,6752.66666666667" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
                           <ui:ForEachRow.Body>
                             <ActivityAction x:TypeArguments="sd:DataRow">
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                               </ActivityAction.Argument>
-                              <Sequence DisplayName="Get Data from Rossum Table" sap:VirtualizedContainerService.HintSize="1882,6166.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                              <Sequence DisplayName="Get Data from Rossum Table" sap:VirtualizedContainerService.HintSize="1882,6600" sap2010:WorkflowViewState.IdRef="Sequence_25">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="x:String" Name="RossumColumnName" />
                                   <Variable x:TypeArguments="x:String" Name="RossumExtractedValue" />
@@ -578,9 +579,9 @@
                                     <InArgument x:TypeArguments="x:String">[row.Item("Adresa pole").ToString]</InArgument>
                                   </Assign.Value>
                                 </Assign>
-                                <If Condition="[Not RossumColumnName.Equals(&quot;&quot;)]" sap:VirtualizedContainerService.HintSize="1840,5768.66666666667" sap2010:WorkflowViewState.IdRef="If_7">
+                                <If Condition="[Not RossumColumnName.Equals(&quot;&quot;)]" sap:VirtualizedContainerService.HintSize="1840,6202" sap2010:WorkflowViewState.IdRef="If_7">
                                   <If.Then>
-                                    <Sequence DisplayName="Get Rossum Values" sap:VirtualizedContainerService.HintSize="1176.66666666667,5604.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                                    <Sequence DisplayName="Get Rossum Values" sap:VirtualizedContainerService.HintSize="1176.66666666667,6038" sap2010:WorkflowViewState.IdRef="Sequence_30">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -796,45 +797,59 @@
                                           </Sequence>
                                         </If.Then>
                                       </If>
-                                      <If sap2010:Annotation.AnnotationText="if payment reference empty, use invoice number excl. all non numeric characters" Condition="[RossumColumnName.Equals(&quot;Payment Reference&quot;) And RossumExtractedValue.equals(&quot;&quot;)]" DisplayName="If Payment Reference empty" sap:VirtualizedContainerService.HintSize="1134.66666666667,620.666666666667" sap2010:WorkflowViewState.IdRef="If_16">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
+                                      <If Condition="[RossumColumnName.Equals(&quot;Payment Reference&quot;)]" DisplayName="If Payment Reference" sap:VirtualizedContainerService.HintSize="1134.66666666667,919.333333333333" sap2010:WorkflowViewState.IdRef="If_31">
                                         <If.Then>
-                                          <Sequence sap2010:Annotation.AnnotationText="If payment reference does not exist, it is rplaced by invoice number after excluding all non-digit characters" DisplayName="Replace by Invoice Number" sap:VirtualizedContainerService.HintSize="376,405.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                                          <If sap2010:Annotation.AnnotationText="if payment reference empty, use invoice number excl. all non numeric characters" Condition="[RossumExtractedValue.equals(&quot;&quot;)]" DisplayName="If Payment Reference empty" sap:VirtualizedContainerService.HintSize="756,734.666666666667" sap2010:WorkflowViewState.IdRef="If_16">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Get Rossum Value workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Components\Get Rossum Value.xaml">
-                                              <ui:InvokeWorkflowFile.Arguments>
-                                                <InArgument x:TypeArguments="x:String" x:Key="in_RossumColumnName">Invoice Number</InArgument>
-                                                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_RossumTable">[DTcsvInvoices]</InArgument>
-                                                <OutArgument x:TypeArguments="x:String" x:Key="out_RossumValue">[RossumExtractedValue]</OutArgument>
-                                              </ui:InvokeWorkflowFile.Arguments>
-                                            </ui:InvokeWorkflowFile>
-                                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Regex matches workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Components\Regex matches.xaml">
-                                              <ui:InvokeWorkflowFile.Arguments>
-                                                <InOutArgument x:TypeArguments="x:String" x:Key="io_ProcessedValue">[RossumExtractedValue]</InOutArgument>
-                                                <InArgument x:TypeArguments="x:String" x:Key="in_ColumnName">[RossumColumnName]</InArgument>
-                                                <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Flag">[RegexFlag]</OutArgument>
-                                              </ui:InvokeWorkflowFile.Arguments>
-                                            </ui:InvokeWorkflowFile>
-                                          </Sequence>
+                                            <If.Then>
+                                              <Sequence sap2010:Annotation.AnnotationText="If payment reference does not exist, it is replaced by invoice number after excluding all non-digit characters" DisplayName="Replace by Invoice Number" sap:VirtualizedContainerService.HintSize="376,540" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_26" Level="Info" Message="[&quot;Variable symbol empty at item:  &quot; + AnnotationID]" />
+                                                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Get Rossum Value workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Components\Get Rossum Value.xaml">
+                                                  <ui:InvokeWorkflowFile.Arguments>
+                                                    <InArgument x:TypeArguments="x:String" x:Key="in_RossumColumnName">Invoice Number</InArgument>
+                                                    <InArgument x:TypeArguments="sd:DataTable" x:Key="in_RossumTable">[DTcsvInvoices]</InArgument>
+                                                    <OutArgument x:TypeArguments="x:String" x:Key="out_RossumValue">[RossumExtractedValue]</OutArgument>
+                                                  </ui:InvokeWorkflowFile.Arguments>
+                                                </ui:InvokeWorkflowFile>
+                                                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Regex matches workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="Components\Regex matches.xaml">
+                                                  <ui:InvokeWorkflowFile.Arguments>
+                                                    <InOutArgument x:TypeArguments="x:String" x:Key="io_ProcessedValue">[RossumExtractedValue]</InOutArgument>
+                                                    <InArgument x:TypeArguments="x:String" x:Key="in_ColumnName">[RossumColumnName]</InArgument>
+                                                    <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Flag">[RegexFlag]</OutArgument>
+                                                  </ui:InvokeWorkflowFile.Arguments>
+                                                </ui:InvokeWorkflowFile>
+                                              </Sequence>
+                                            </If.Then>
+                                            <If.Else>
+                                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Regex matches workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Components\Regex matches.xaml">
+                                                <ui:InvokeWorkflowFile.Arguments>
+                                                  <InOutArgument x:TypeArguments="x:String" x:Key="io_ProcessedValue">[RossumExtractedValue]</InOutArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_ColumnName">[RossumColumnName]</InArgument>
+                                                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Flag">[RegexFlag]</OutArgument>
+                                                </ui:InvokeWorkflowFile.Arguments>
+                                              </ui:InvokeWorkflowFile>
+                                            </If.Else>
+                                          </If>
                                         </If.Then>
                                       </If>
-                                      <If sap2010:Annotation.AnnotationText="If delivery note empty, replace by invoice number ex alphanumeric, else remove alphanumerics in delivery note if any" Condition="[RossumColumnName.Equals(&quot;Delivery Note&quot;)]" DisplayName="If Delivery Note empty" sap:VirtualizedContainerService.HintSize="1134.66666666667,1180" sap2010:WorkflowViewState.IdRef="If_19">
+                                      <If sap2010:Annotation.AnnotationText="If delivery note empty, replace by invoice number ex alphanumeric, else remove alphanumerics in delivery note if any" Condition="[RossumColumnName.Equals(&quot;Delivery Note&quot;)]" DisplayName="If Delivery Note empty" sap:VirtualizedContainerService.HintSize="1134.66666666667,1314.66666666667" sap2010:WorkflowViewState.IdRef="If_19">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                         <If.Then>
-                                          <If Condition="[NOT RossumExtractedValue.Equals(&quot;&quot;)]" DisplayName="If Delivery note not empty" sap:VirtualizedContainerService.HintSize="1098,964.666666666667" sap2010:WorkflowViewState.IdRef="If_24">
+                                          <If Condition="[NOT RossumExtractedValue.Equals(&quot;&quot;)]" DisplayName="If Delivery note not empty" sap:VirtualizedContainerService.HintSize="1098,1099.33333333333" sap2010:WorkflowViewState.IdRef="If_24">
                                             <If.Then>
                                               <Sequence DisplayName="Process Delivery note" sap:VirtualizedContainerService.HintSize="526,646.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_88">
                                                 <sap:WorkflowViewStateService.ViewState>
@@ -872,12 +887,13 @@
                                               </Sequence>
                                             </If.Then>
                                             <If.Else>
-                                              <Sequence DisplayName="Replace by invoice number ex alphanumerics" sap:VirtualizedContainerService.HintSize="526,800.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_81">
+                                              <Sequence DisplayName="Replace by invoice number ex alphanumerics" sap:VirtualizedContainerService.HintSize="526,935.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_81">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
+                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_27" Level="Info" Message="[&quot;Delivery note empty at item: &quot; + AnnotationID]" />
                                                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Get Rossum Value workflow" sap:VirtualizedContainerService.HintSize="484,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="Components\Get Rossum Value.xaml">
                                                   <ui:InvokeWorkflowFile.Arguments>
                                                     <InArgument x:TypeArguments="x:String" x:Key="in_RossumColumnName">Invoice Number</InArgument>
@@ -1124,6 +1140,19 @@
                             </Sequence>
                           </If.Then>
                         </If>
+                        <Assign sap2010:Annotation.AnnotationText="For logging purposes" DisplayName="Copy Mapping table to LogTable" sap:VirtualizedContainerService.HintSize="1932.66666666667,92.6666666666667" sap2010:WorkflowViewState.IdRef="Assign_69">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="sd:DataTable">[LogTable]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="sd:DataTable">[MappingTable.Copy()]</InArgument>
+                          </Assign.Value>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Assign>
                         <Assign DisplayName="Assign Columns to Remove" sap:VirtualizedContainerService.HintSize="1932.66666666667,62" sap2010:WorkflowViewState.IdRef="Assign_19">
                           <Assign.To>
                             <OutArgument x:TypeArguments="s:String[]">[ColumnsToRemove]</OutArgument>
@@ -1176,7 +1205,7 @@
                         </ui:CommentOut>
                         <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1932.66666666667,52.6666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_7">
                           <ui:CommentOut.Body>
-                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="739.333333333333,1600" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="739.333333333333,1557.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_48">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1198,7 +1227,7 @@
                                     <InArgument x:TypeArguments="scg:IEnumerable(sxl:XElement)">[XMLStructure.Element("Doklad").Descendants]</InArgument>
                                   </Assign.Value>
                                 </Assign>
-                                <ui:ForEach x:TypeArguments="sxl:XElement" CurrentIndex="{x:Null}" DisplayName="For Each Xelement" sap:VirtualizedContainerService.HintSize="655.333333333333,710" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[XMLelements]">
+                                <ui:ForEach x:TypeArguments="sxl:XElement" CurrentIndex="{x:Null}" DisplayName="For Each Xelement" sap:VirtualizedContainerService.HintSize="655.333333333333,712" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[XMLelements]">
                                   <ui:ForEach.Body>
                                     <ActivityAction x:TypeArguments="sxl:XElement">
                                       <ActivityAction.Argument>
@@ -1375,13 +1404,13 @@ XMLOutput)]</InArgument>
                         </sap:WorkflowViewStateService.ViewState>
                       </Assign>
                     </Sequence>
-                    <Sequence DisplayName="Match and move File" sap:VirtualizedContainerService.HintSize="2016.66666666667,1378" sap2010:WorkflowViewState.IdRef="Sequence_61">
+                    <Sequence DisplayName="Match and move File" sap:VirtualizedContainerService.HintSize="2016.66666666667,1392" sap2010:WorkflowViewState.IdRef="Sequence_61">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <TryCatch DisplayName="Try to Match File" sap:VirtualizedContainerService.HintSize="506.666666666667,323.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_12">
+                      <TryCatch DisplayName="Try to Match File" sap:VirtualizedContainerService.HintSize="880,323.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_12">
                         <TryCatch.Try>
                           <Assign DisplayName="Find matching file" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_58">
                             <Assign.To>
@@ -1404,7 +1433,7 @@ XMLOutput)]</InArgument>
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="s:InvalidOperationException" Name="exception" />
                               </ActivityAction.Argument>
-                              <Sequence DisplayName="Report Missing File and Continue" sap:VirtualizedContainerService.HintSize="376,348" sap2010:WorkflowViewState.IdRef="Sequence_74">
+                              <Sequence DisplayName="Report Missing File and Continue" sap:VirtualizedContainerService.HintSize="376,350.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_74">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1434,7 +1463,7 @@ XMLOutput)]</InArgument>
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="si:IOException" Name="exception" />
                               </ActivityAction.Argument>
-                              <Sequence DisplayName="Report connection issue and continue" sap:VirtualizedContainerService.HintSize="376,348" sap2010:WorkflowViewState.IdRef="Sequence_73">
+                              <Sequence DisplayName="Report connection issue and continue" sap:VirtualizedContainerService.HintSize="376,350.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_73">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1455,14 +1484,14 @@ XMLOutput)]</InArgument>
                           </Catch>
                         </TryCatch.Catches>
                       </TryCatch>
-                      <Sequence DisplayName="Move File" sap:VirtualizedContainerService.HintSize="506.666666666667,922.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                      <Sequence DisplayName="Move File" sap:VirtualizedContainerService.HintSize="880,936.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_56">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <TryCatch DisplayName="Try to Move File" sap:VirtualizedContainerService.HintSize="464.666666666667,830.666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_13">
+                        <TryCatch DisplayName="Try to Move File" sap:VirtualizedContainerService.HintSize="838,844.666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_13">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1493,14 +1522,14 @@ XMLOutput)]</InArgument>
                                 </Assign.Value>
                               </Assign>
                               <ui:CopyFile ContinueOnError="{x:Null}" Destination="[NewFileFullPath]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="384,162" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="False" Path="[MatchedFile]" />
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="384,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Trace" Message="[&quot;File moved to Processed folder&quot;]" />
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="384,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;File &quot; + path.GetFileName(MatchedFile) + &quot;moved to Processed folder as &quot; + path.GetFileName(NewFileFullPath)]" />
                             </Sequence>
                           </TryCatch.Try>
                           <TryCatch.Catches>
-                            <Catch x:TypeArguments="si:IOException" sap:VirtualizedContainerService.HintSize="430.666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_16">
+                            <Catch x:TypeArguments="si:IOException" sap:VirtualizedContainerService.HintSize="804,672.666666666667" sap2010:WorkflowViewState.IdRef="Catch`1_16">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
@@ -1508,14 +1537,15 @@ XMLOutput)]</InArgument>
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="si:IOException" Name="exception" />
                                 </ActivityAction.Argument>
-                                <If Condition="[exception.Message.Contains(&quot;already exists&quot;)]" DisplayName="If File alrady exists" sap:VirtualizedContainerService.HintSize="798,514.666666666667" sap2010:WorkflowViewState.IdRef="If_18">
+                                <If Condition="[exception.Message.Contains(&quot;already exists&quot;)]" DisplayName="If File alrady exists" sap:VirtualizedContainerService.HintSize="798,602" sap2010:WorkflowViewState.IdRef="If_18">
                                   <If.Then>
-                                    <Sequence DisplayName="Send email and process next item" sap:VirtualizedContainerService.HintSize="376,303.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                                    <Sequence DisplayName="Send email and process next item" sap:VirtualizedContainerService.HintSize="376,438" sap2010:WorkflowViewState.IdRef="Sequence_55">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
+                                      <ui:LogMessage DisplayName="Log Duplicate item Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_25" Level="Info" Message="[&quot;Attempted to create duplicate file in final location: &quot; + NewFileFullPath]" />
                                       <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Robot se pokusil uložit dokument: &quot; + OutDict(&quot;DocID&quot;) +&quot;, který již v cílovém úložišti existuje! Zkontrolujte dokument v pracovní složce&quot; + MatchedFile + &quot; a porovnejte s dokumentem v cílové složce&quot; + NewFileFullPath]" DisplayName="Send SMTP Mail Message" Email="[ConfigObj.Item(&quot;EmailSender&quot;).ToString]" EnableSSL="True" From="[ConfigObj.Item(&quot;EmailSender&quot;).ToString]" sap:VirtualizedContainerService.HintSize="334,149.333333333333" sap2010:WorkflowViewState.IdRef="SendMail_3" IsBodyHtml="False" Password="[ConfigObj.Item(&quot;PasswordSender&quot;).ToString]" Port="465" SecureConnection="Auto" Server="[ConfigObj.Item(&quot;SmtpServer&quot;).ToString]" Subject="[&quot;Upozornění Robot / &quot; +OutDict(&quot;DocType&quot;) + &quot;/&quot; + OutDict(&quot;DocID&quot;) + &quot;/ duplicitní název dokumentu&quot;]" To="[ConfigObj.Item(&quot;EmailTechNotification&quot;).ToString]">
                                         <ui:SendMail.Files>
                                           <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
@@ -1531,7 +1561,7 @@ XMLOutput)]</InArgument>
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:LogMessage DisplayName="Log Error Message at Move File" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Error" Message="[&quot;Could not move file to processed folder, Target Directory not accessible/not found&quot;]" />
+                                      <ui:LogMessage DisplayName="Log Error Message at Move File" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Error" Message="[&quot;Could not move file &quot; +  Path.GetFileName(MatchedFile) + &quot; to processed folder, Target Directory not accessible/not found&quot;]" />
                                       <Assign DisplayName="Assign Email body" sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_54">
                                         <Assign.To>
                                           <OutArgument x:TypeArguments="x:String">[MessageBody]</OutArgument>
@@ -1550,46 +1580,47 @@ XMLOutput)]</InArgument>
                         </TryCatch>
                       </Sequence>
                     </Sequence>
-                    <Sequence DisplayName="Save Data to SQL" sap:VirtualizedContainerService.HintSize="2016.66666666667,1058.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_60">
+                    <Sequence DisplayName="Save Data to SQL" sap:VirtualizedContainerService.HintSize="2016.66666666667,1193.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_60">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign DisplayName="Assign Query" sap:VirtualizedContainerService.HintSize="788.666666666667,65.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_42">
+                      <Assign DisplayName="Assign Query" sap:VirtualizedContainerService.HintSize="860.666666666667,65.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_42">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[Query]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="x:String" xml:space="preserve">["USE IFSDATA_INTERFACE INSERT INTO dbo.IFS_ROBOT_FD (DocID ,DocType ,Currency ,BenetOrderNumber ,OPCH_NumAtCard ,OCRD_VatIdUnCmp ,OPCH_TaxDate ,OPCH_DocDueDate ,OPCH_U_Dl_k_Prijemce ,OPCH_DocTotal ,OCRB_Account ,OPCH_VatSum ,OPCH_BaseTotal , DATE_Import_SAP, OCRD_LicTradNum) VALUES ('" + OutDict("DocID") +"', '" _
+                          <InArgument x:TypeArguments="x:String" xml:space="preserve">["USE IFSDATA_INTERFACE INSERT INTO dbo.IFS_ROBOT_FD (DocID ,DocType ,Currency ,BenetOrderNumber ,OPCH_NumAtCard ,OCRD_VatIdUnCmp ,OPCH_TaxDate ,OPCH_DocDueDate ,OPCH_U_Dl_k_Prijemce ,OPCH_DocTotal ,OCRB_Account ,OPCH_VatSum ,OPCH_BaseTotal , DATE_Import_SAP, OCRD_LicTradNum, OPCH_DocDate) VALUES ('" + OutDict("DocID") +"', '" _
 + OutDict("DocType") +"', '" + OutDict("Currency")+ "', '" + OutDict("BenetOrderNumber") + "', '" + OutDict("OPCH_NumAtCard") + "', '" _
 + OutDict("OCRD_VatIdUnCmp") + "', '" + OutDict("OPCH_TaxDate") + "', '" + OutDict("OPCH_DocDueDate") + "', '" + OutDict("OPCH_U_Dl_k_Prijemce") + "', '" _
 + OutDict("OPCH_DocTotal") + "', '" + OutDict("OCRB_Account") + "', '" + OutDict("OPCH_VatSum") +"', '" + OutDict("OPCH_BaseTotal") + "', '" _
-+ OutDict("XMLCreateDate") +  "', '" +OutDict("OCRD_LicTradNum") + "')"]</InArgument>
++ OutDict("XMLCreateDate") +  "', '" +OutDict("OCRD_LicTradNum") +  "', '" +OutDict("OPCH_DocDate") + "')"]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Database Query workflow" sap:VirtualizedContainerService.HintSize="788.666666666667,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Components\Database Query.xaml">
+                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Database Query workflow" sap:VirtualizedContainerService.HintSize="860.666666666667,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Components\Database Query.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="x:String" x:Key="in_Type">nonQuery</InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="in_Query">[Query]</InArgument>
                           <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Flag">[Flag]</OutArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
-                      <If sap2010:Annotation.AnnotationText="Status flag of the preceding function (Database Insert), if True the data have not been inserted and the item processing shall end" Condition="[Flag]" DisplayName="If Repeat Flag True" sap:VirtualizedContainerService.HintSize="788.666666666667,707.333333333333" sap2010:WorkflowViewState.IdRef="If_15">
+                      <If sap2010:Annotation.AnnotationText="Status flag of the preceding function (Database Insert), if True the data have not been inserted and the item processing shall end" Condition="[Flag]" DisplayName="If Repeat Flag True" sap:VirtualizedContainerService.HintSize="860.666666666667,842" sap2010:WorkflowViewState.IdRef="If_15">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <If.Then>
-                          <Sequence DisplayName="Log Error and continue" sap:VirtualizedContainerService.HintSize="304,216" sap2010:WorkflowViewState.IdRef="Sequence_65">
+                          <Sequence DisplayName="Log Error and continue" sap:VirtualizedContainerService.HintSize="376,350.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_65">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Assign DisplayName="Assign Email body" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_52">
+                            <ui:LogMessage DisplayName="Log Failed Insert Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_24" Level="Info" Message="[&quot;Could not insert into Database, item &quot; + AnnotationID]" />
+                            <Assign DisplayName="Assign Email body" sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_52">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:String">[MessageBody]</OutArgument>
                               </Assign.To>
@@ -1597,20 +1628,21 @@ XMLOutput)]</InArgument>
                                 <InArgument x:TypeArguments="x:String" xml:space="preserve">[MessageBody &amp; " Could not insert into database file ID no: " &amp; AnnotationID &amp; ", will retry at next Rossum export data run. No action needed."  &amp; vbCrLf]</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <ui:Continue sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="Continue_1" />
+                            <ui:Continue sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Continue_1" />
                           </Sequence>
                         </If.Then>
                         <If.Else>
-                          <TryCatch DisplayName="Try to Delete File in Source Directory" sap:VirtualizedContainerService.HintSize="438.666666666667,512.666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_11">
+                          <TryCatch DisplayName="Try to Delete File in Source Directory" sap:VirtualizedContainerService.HintSize="438.666666666667,647.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_11">
                             <TryCatch.Try>
-                              <Sequence sap:VirtualizedContainerService.HintSize="326,274.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_76">
+                              <Sequence sap:VirtualizedContainerService.HintSize="376,409.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_76">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:Delete ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="284,80.6666666666667" sap2010:WorkflowViewState.IdRef="Delete_4" Path="[MatchedFile]" />
-                                <Assign DisplayName="Assign Success Message" sap:VirtualizedContainerService.HintSize="284,62" sap2010:WorkflowViewState.IdRef="Assign_62">
+                                <ui:LogMessage DisplayName="Log Success Insert Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_23" Level="Info" Message="[&quot;Database Insert successful, item: &quot; + AnnotationID]" />
+                                <ui:Delete ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="334,80.6666666666667" sap2010:WorkflowViewState.IdRef="Delete_4" Path="[MatchedFile]" />
+                                <Assign DisplayName="Assign Success Message" sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_62">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:String">[SuccessBody]</OutArgument>
                                   </Assign.To>
@@ -1632,7 +1664,7 @@ XMLOutput)]</InArgument>
                                   <ActivityAction.Argument>
                                     <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                   </ActivityAction.Argument>
-                                  <Sequence DisplayName="Log Error at delete" sap:VirtualizedContainerService.HintSize="376,288.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_68">
+                                  <Sequence DisplayName="Log Error at delete" sap:VirtualizedContainerService.HintSize="376,286" sap2010:WorkflowViewState.IdRef="Sequence_68">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1654,6 +1686,42 @@ XMLOutput)]</InArgument>
                           </TryCatch>
                         </If.Else>
                       </If>
+                    </Sequence>
+                    <Sequence sap2010:Annotation.AnnotationText="Logging the extracted values for debug and performance review.&#xD;&#xA;" DisplayName="Send to Log Bucket" sap:VirtualizedContainerService.HintSize="2016.66666666667,655.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_91">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:String" Name="LogString" />
+                        <Variable x:TypeArguments="x:String" Name="BucketPath" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:OutputDataTable DataTable="[LogTable]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="570,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[LogString]" />
+                      <If Condition="[Not MatchedFile.Equals(&quot;&quot;)]" DisplayName="If Matched file exists" sap:VirtualizedContainerService.HintSize="570,226" sap2010:WorkflowViewState.IdRef="If_32">
+                        <If.Then>
+                          <Assign DisplayName="Assign Matched path as name" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_70">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[BucketPath]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[Path.GetFileNameWithoutExtension(MatchedFile)+"_ " + Today.ToString("yyyy-MM-dd")+ ".txt"]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </If.Then>
+                        <If.Else>
+                          <Assign DisplayName="Assign AnnotationID as name" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_71">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[BucketPath]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[AnnotationID +"_" + Today.ToString("yyyy-MM-dd") + ".txt"]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </If.Else>
+                      </If>
+                      <ucas:WriteStorageText DisplayName="Write Storage Text" FolderPath="Shared" sap:VirtualizedContainerService.HintSize="570,190" sap2010:WorkflowViewState.IdRef="WriteStorageText_1" Path="[BucketPath]" StorageBucketName="Logs" Text="[LogString]" TimeoutMS="30000" />
                     </Sequence>
                     <If Condition="[in_TabConfirmedEnabled]" sap:VirtualizedContainerService.HintSize="2016.66666666667,224" sap2010:WorkflowViewState.IdRef="If_3">
                       <If.Then>
