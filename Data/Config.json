@@ -6,5 +6,6 @@
 "SMTPport":"465",
 "EmailTechNotification": "it@benet-auto.cz",
 "OutputTableMap":"Data\\OutputTableRows.xlsx",
-"XMLstructure":"Data\\struktura.xml"
+"XMLstructure":"Data\\struktura.xml",
+"LogFilePath":"Data\\Temp\\logFile.csv"
 }
